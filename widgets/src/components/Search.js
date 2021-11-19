@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 
 const Search = () => {
   const [term, setTerm] = useState("");
+  console.log("I run with every render");
   useEffect(() => {
-    console.log("use Efect");
-  });
+    console.log("I RUN AFTER EVERY RENDER AND INITIAL RENDER");
+  }, [term]);
   return (
     <div>
       <div className="ui form">
