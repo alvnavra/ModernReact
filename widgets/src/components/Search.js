@@ -6,7 +6,16 @@ const Search = () => {
 
   useEffect(() => {
     const search = async () => {
-      await axios.get("kjkjkjkjj");
+      //https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=programaci%C3%B3n
+      await axios.get("https://en.wikipedia.org/w/api.php", {
+        params: {
+          action: "query",
+          list: "search",
+          origin: "*",
+          format: "json",
+          srsearch: term,
+        },
+      });
     };
     search();
   }, [term]);
